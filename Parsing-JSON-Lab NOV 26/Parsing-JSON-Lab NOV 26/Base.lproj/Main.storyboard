@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--WeatherAPI View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Parsing_JSON_Lab_NOV_26" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WeatherAPIViewController" customModule="Parsing_JSON_Lab_NOV_26" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,11 +23,11 @@
             </objects>
             <point key="canvasLocation" x="2868.115942028986" y="112.5"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="UL4-gV-KJd">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YdU-T5-Cgg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="4Xg-Zc-1U2"/>
+                    <tabBarItem key="tabBarItem" title="" image="cloud.drizzle.fill" catalog="system" id="4Xg-Zc-1U2"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0r0-Gy-1cw">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -48,6 +48,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="mO7-kV-tTd" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MZn-1K-3C8">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -61,10 +62,10 @@
             </objects>
             <point key="canvasLocation" x="858" y="822"/>
         </scene>
-        <!--View Controller-->
+        <!--ColorAPI View Controller-->
         <scene sceneID="jh1-we-eiw">
             <objects>
-                <viewController id="xcF-lS-sl3" sceneMemberID="viewController">
+                <viewController id="xcF-lS-sl3" customClass="ColorAPIViewController" customModule="Parsing_JSON_Lab_NOV_26" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ReG-Od-gur">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,10 +78,10 @@
             </objects>
             <point key="canvasLocation" x="2868.115942028986" y="821.65178571428567"/>
         </scene>
-        <!--View Controller-->
+        <!--Random User View Controller-->
         <scene sceneID="l3f-sw-faM">
             <objects>
-                <viewController id="npu-Wl-ZZQ" sceneMemberID="viewController">
+                <viewController id="npu-Wl-ZZQ" customClass="RandomUserViewController" customModule="Parsing_JSON_Lab_NOV_26" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nwo-d1-GFY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,11 +94,11 @@
             </objects>
             <point key="canvasLocation" x="2868.115942028986" y="1609.8214285714284"/>
         </scene>
-        <!--Item-->
+        <!--COLOR-->
         <scene sceneID="8PQ-YY-Kwu">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yTE-xs-V61" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="lwx-hE-1HL"/>
+                    <tabBarItem key="tabBarItem" title="COLOR" id="lwx-hE-1HL"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="T0e-bg-DyT">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -116,7 +117,7 @@
         <scene sceneID="y4b-nO-7ff">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2Dg-n3-ggf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="P7Q-Fh-CdQ"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="questionmark.circle.fill" catalog="system" id="P7Q-Fh-CdQ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1UF-9O-evL">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -132,4 +133,8 @@
             <point key="canvasLocation" x="1957.9710144927537" y="1609.8214285714284"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cloud.drizzle.fill" catalog="system" width="64" height="62"/>
+        <image name="questionmark.circle.fill" catalog="system" width="64" height="62"/>
+    </resources>
 </document>

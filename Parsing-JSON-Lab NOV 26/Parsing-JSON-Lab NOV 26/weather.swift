@@ -19,6 +19,8 @@ struct City: Codable {
     let name: String
     let main: Main // temp Info
     let weather: [Weather] // accessing the type struct weather
+    
+    
 }
 
 struct Main: Codable {
@@ -40,7 +42,7 @@ extension WeatherData {
         var theActualCitiesData = [City]()
         
         // this hold all the data from the json
-        guard let fileUrl = Bundle.main.url(forResource: "CitiesWithinARectangleZone", withExtension: "json") else {
+        guard let fileUrl = Bundle.main.url(forResource: "citiesWithinARectangleZone", withExtension: "json") else {
             fatalError("could not locate file")
         }
         

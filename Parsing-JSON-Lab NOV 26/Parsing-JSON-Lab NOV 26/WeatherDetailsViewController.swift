@@ -23,8 +23,21 @@ class WeatherDetailsViewController: UIViewController {
     
     func updateUI() {
         navigationItem.title = selectedCity?.name
-        currentWeatherLabel.text = selectedCity?.weather.description
-        tempLabel.text = selectedCity?.main.temp.description
+        
+        guard let theCity = selectedCity else {
+            print("selected city never got the variable")
+            return
+        }
+        
+        // need to say .first because = 
+        guard let theWeatherDescription = theCity.weather.first?.description else {
+            print("it is wrong")
+            return
+        }
+        
+        currentWeatherLabel.text = ( " There will be \(theWeatherDescription)")
+        
+        tempLabel.text = (" It is \(theCity.main.temp.description)")
     }
 
 }

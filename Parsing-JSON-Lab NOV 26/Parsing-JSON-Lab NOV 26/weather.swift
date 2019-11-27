@@ -22,9 +22,10 @@ struct Weather: Codable {
 extension WeatherData {
     
     static func getWeather() -> [Weather] {
-        
+        // an empty instance to hold the arrays of weather
         var weather = [Weather]()
         
+        // this hold all the data from the json
         guard let fileUrl = Bundle.main.url(forResource: "CitiesWithinARectangleZone", withExtension: "json") else {
             fatalError("could not locate file")
         }
@@ -39,6 +40,7 @@ extension WeatherData {
                 //Instance member 'decode' cannot be used on type 'JSONDecoder'; did you mean to use a value of this type instead? means you forgot the ()
             let specificWeatherData = try JSONDecoder().decode(WeatherData.self, from: data)
             
+            // applies the weather data to the empty instance already created
             weather = specificWeatherData.allWeather
         } catch {
             fatalError("passing data from json into weather did not work \(error)")

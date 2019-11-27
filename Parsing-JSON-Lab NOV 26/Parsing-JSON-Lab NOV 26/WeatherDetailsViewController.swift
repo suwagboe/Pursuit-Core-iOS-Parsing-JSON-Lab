@@ -29,7 +29,7 @@ class WeatherDetailsViewController: UIViewController {
             return
         }
         
-        // need to say .first because = 
+        // need to say .first because =
         guard let theWeatherDescription = theCity.weather.first?.description else {
             print("it is wrong")
             return
@@ -37,7 +37,7 @@ class WeatherDetailsViewController: UIViewController {
         
         currentWeatherLabel.text = ( " There will be \(theWeatherDescription)")
         
-        tempLabel.text = (" It is \(theCity.main.temp.description)")
+        tempLabel.text = (" It is \(theCity.main.temp.description)˚C ")
     }
 
 }

@@ -11,10 +11,10 @@ import UIKit
 class WeatherAPIViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
+   // @IBOutlet weak var searchBar: UISearchBar!
     
     // load the data into the tableView
-    var weather = [Weather](){
+    var citiesInfo = [cities](){
         didSet{
             // property observer because once it gets the data it load the view controller with the data
             
@@ -28,40 +28,48 @@ class WeatherAPIViewController: UIViewController {
         super.viewDidLoad()
 
         loadData()
-        tableView.delegate = self
+      //  tableView.delegate = self
+        tableView.dataSource = self
     }
     
     
     func loadData() {
         // assigns empty variable about the data from weather
-        weather = WeatherData.getWeather()
+        citiesInfo = WeatherData.getWeatherData()
     }
     
 
 }
 
-//extension WeatherAPIViewController: UITableViewDataSource {
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return weather.count
+extension WeatherAPIViewController: UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return citiesInfo.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+         let cell = tableView.dequeueReusableCell(withIdentifier: "citiesCell", for: indexPath)
+        
+        // why is it .row here and not for the one above
+        let selectedcities = citiesInfo[indexPath.row]
+        
+        cell.textLabel?.text = selectedcities.name
+        //cell.detailTextLabel?.text = (" the weather is  \(selectedcities.weather.description)")
+        
+         return cell
+        
+        
+    }
+    
+    
+}
+
+
+
+//extension WeatherAPIViewController: UITableViewDelegate {
+//    // need the height of the rows
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 180
 //    }
-    
-   // func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        
-      //  guard let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath.row) as
-        
-        
-        // return cell}}
-
-
-
-extension WeatherAPIViewController: UITableViewDelegate {
-    // need the height of the rows
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 180
-    }
-
-    
-    
-}
+//}

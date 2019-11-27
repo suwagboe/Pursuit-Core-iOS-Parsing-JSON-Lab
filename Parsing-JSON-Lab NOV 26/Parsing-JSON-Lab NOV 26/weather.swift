@@ -9,29 +9,38 @@
 import Foundation
 
 struct WeatherData: Codable {
-    let allWeather: [Weather]
+    let list: [cities]
     
 }
 
-struct Weather: Codable {
+struct cities: Codable {
     let name: String
+    let main =  [String: Double]() // temp Info
+    let weather: [weather]
+}
+
+struct main: Codable {
     let temp: Double
-    
+    let temp_min: Double
+    let temp_max: Double
+}
+
+struct weather: Codable {
+    let description: String
 }
 
 extension WeatherData {
     
-    static func getWeather() -> [Weather] {
+    static func getWeatherData() -> [cities]{
         // an empty instance to hold the arrays of weather
-        var weather = [Weather]()
+        var theActualCitiesData = [cities]()
         
         // this hold all the data from the json
         guard let fileUrl = Bundle.main.url(forResource: "CitiesWithinARectangleZone", withExtension: "json") else {
             fatalError("could not locate file")
         }
         
-        do {
-            
+        do{
             //get the actual data from the cities file
             let data = try Data(contentsOf: fileUrl)
             
@@ -41,11 +50,12 @@ extension WeatherData {
             let specificWeatherData = try JSONDecoder().decode(WeatherData.self, from: data)
             
             // applies the weather data to the empty instance already created
-            weather = specificWeatherData.allWeather
+            theActualCitiesData = specificWeatherData.list
+            
         } catch {
             fatalError("passing data from json into weather did not work \(error)")
         }
-        return weather
+        return theActualCitiesData
     }
     
 }

@@ -9,8 +9,13 @@
 import UIKit
 
 class WeatherAPIViewController: UIViewController {
-//Open Weather API (Use "Cities within a rectangle zone")
-//Show a list of all of the cities in your query. Selecting a city should segue to a detailVC showing the current temperature and weather.
+
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    // load the data into the tableView
+    //var weather
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -14,7 +14,7 @@ class WeatherAPIViewController: UIViewController {
    // @IBOutlet weak var searchBar: UISearchBar!
     
     // load the data into the tableView
-    var citiesInfo = [cities](){
+    var citiesInfo = [City](){
         didSet{
             // property observer because once it gets the data it load the view controller with the data
             
@@ -38,6 +38,13 @@ class WeatherAPIViewController: UIViewController {
         citiesInfo = WeatherData.getWeatherData()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailsController = segue.destination as? WeatherDetailsViewController, let indexPath = tableView.indexPathForSelectedRow else {
+            fatalError("the segue needs to be checked")
+        }
+        
+        detailsController.selectedCity = citiesInfo[indexPath.row]
+    }
 
 }
 
@@ -54,7 +61,7 @@ extension WeatherAPIViewController: UITableViewDataSource {
         // why is it .row here and not for the one above
         let selectedcities = citiesInfo[indexPath.row]
         
-        cell.textLabel?.text = selectedcities.name
+        cell.textLabel?.text = selectedcities.name 
         //cell.detailTextLabel?.text = (" the weather is  \(selectedcities.weather.description)")
         
          return cell

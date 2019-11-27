@@ -18,6 +18,7 @@
 		3C4F395D238DE40D000E6F72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C4F395B238DE40D000E6F72 /* LaunchScreen.storyboard */; };
 		3C61DAD5238DEC68006EED6C /* WeatherAPIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C61DAD4238DEC68006EED6C /* WeatherAPIViewController.swift */; };
 		3C61DAD7238DEC85006EED6C /* RandomUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C61DAD6238DEC85006EED6C /* RandomUserViewController.swift */; };
+		3C7101FD238EF6560051DB71 /* WeatherDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7101FC238EF6560051DB71 /* WeatherDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		3C4F395E238DE40D000E6F72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C61DAD4238DEC68006EED6C /* WeatherAPIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPIViewController.swift; sourceTree = "<group>"; };
 		3C61DAD6238DEC85006EED6C /* RandomUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserViewController.swift; sourceTree = "<group>"; };
+		3C7101FC238EF6560051DB71 /* WeatherDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				3C4F3956238DE40A000E6F72 /* Main.storyboard */,
+				3C7101FC238EF6560051DB71 /* WeatherDetailsViewController.swift */,
 				3C4E77B8238ECDC000DEEAF3 /* CitiesWithinARectangleZone.json */,
 				3C4E77BA238ECEC300DEEAF3 /* weather.swift */,
 				3C61DAD4238DEC68006EED6C /* WeatherAPIViewController.swift */,
@@ -156,6 +159,7 @@
 			files = (
 				3C4F3955238DE40A000E6F72 /* ColorAPIViewController.swift in Sources */,
 				3C61DAD7238DEC85006EED6C /* RandomUserViewController.swift in Sources */,
+				3C7101FD238EF6560051DB71 /* WeatherDetailsViewController.swift in Sources */,
 				3C4E77BB238ECEC300DEEAF3 /* weather.swift in Sources */,
 				3C4F3951238DE40A000E6F72 /* AppDelegate.swift in Sources */,
 				3C61DAD5238DEC68006EED6C /* WeatherAPIViewController.swift in Sources */,

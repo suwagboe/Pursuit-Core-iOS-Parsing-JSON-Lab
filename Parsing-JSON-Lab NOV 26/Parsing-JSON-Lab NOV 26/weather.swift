@@ -9,31 +9,35 @@
 import Foundation
 
 struct WeatherData: Codable {
-    let list: [cities]
+    // so inside of weatherData is ... a list that holds the cities
+    let list: [City]
     
 }
 
-struct cities: Codable {
+struct City: Codable {
+    // inside of the cities that is inside of the list there are ...
     let name: String
-    let main =  [String: Double]() // temp Info
-    let weather: [weather]
+    let main: Main // temp Info
+    let weather: [Weather] // accessing the type struct weather
 }
 
-struct main: Codable {
+struct Main: Codable {
+    // inside of main that is inside of city that is inside of list is...
     let temp: Double
     let temp_min: Double
     let temp_max: Double
 }
 
-struct weather: Codable {
+struct Weather: Codable {
+    // inside of weather that is inside of city that is inside of list is ...
     let description: String
 }
 
 extension WeatherData {
     
-    static func getWeatherData() -> [cities]{
+    static func getWeatherData() -> [City]{
         // an empty instance to hold the arrays of weather
-        var theActualCitiesData = [cities]()
+        var theActualCitiesData = [City]()
         
         // this hold all the data from the json
         guard let fileUrl = Bundle.main.url(forResource: "CitiesWithinARectangleZone", withExtension: "json") else {

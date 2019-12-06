@@ -9,13 +9,42 @@
 import UIKit
 
 class ColorAPIViewController: UIViewController {
-//Display a list of all of the names of the colors from your query. The color of each cell should match the color of the object. Selecting a cell should segue to a detailVC with the hex value and rgb values displayed.
+
+    @IBOutlet weak var tableView: UITableView!
+    
+    var allColors = [Color]() {
+        didSet{
+            tableView.reloadData()}
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        tableView.dataSource = self
+        loadData()
+
     }
 
 
+    func loadData() {
+        allColors = Color.getColors()
+    }
+    
 }
 
+extension ColorAPIViewController: UITableViewDataSource {
+ 
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+         let cell = tableView.dequeueReusableCell(withIdentifier: "colorCell", for: indexPath)
+              
+        let color = allColors[indexPath.row]
+              
+        cell.textLabel?.text = color.name.value
+        
+          return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return allColors.count
+    }
+    
+}
